@@ -19,12 +19,16 @@ resource "jenkins_folder" "example_folder" {
   name = "Example Folder"
 }
 
+
+data "template_file" "job_template" {
+  template = file("${path.module}/job.xml")
+  vars = { my_password = var.my_password }
+}
+
 resource "jenkins_job" "example_job" {
   name     = "Example Job"
   folder   = jenkins_folder.example_folder.id
-  template = templatefile("${path.module}/job.xml", {
-    description = "An example job created from Terraform"
-  })
+  template = data.template_file.job_template.rendered
 }
 
 # output id {
