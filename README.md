@@ -1,16 +1,14 @@
-This is an example repository for using terraform to manage a simple set of jenkins
-resources.
+This is an example repository for using terraform to manage a simple set of jenkins resources.
 
-This uses the terraform jenkins provider https://github.com/taiidani/terraform-provider-jenkins
+This code makes use of the terraform jenkins provider https://github.com/taiidani/terraform-provider-jenkins, who's documentation can be found https://registry.terraform.io/providers/taiidani/jenkins/latest/docs
 
 The Jekins environment variables used by this repository are as follows
 
 ```shell
-$ export JENKINS_URL="https://jenkins.url"
-$ export JENKINS_USERNAME="username"
-$ export JENKINS_PASSWORD="password"
+export JENKINS_URL="https://jenkins.url"
+export JENKINS_USERNAME="username"
+export JENKINS_PASSWORD="password"
 ```
-
 This repository is intended to be run from gitlab, using the terraform gitlab integration, the following varibles 
 must be set (for the labs, these are pre-populated)
 
